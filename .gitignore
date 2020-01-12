@@ -6,4 +6,8 @@ export_presets.cfg
 
 # Mono-specific ignores
 .mono/
+<<<<<<< HEAD
 data_*/
+=======
+data_*/
+>>>>>>> 54d288d2bce737c560f5e038590f01ff4666c43b
