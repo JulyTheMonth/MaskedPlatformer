@@ -14,14 +14,39 @@ func _physics_process(delta) -> void:
 	var is_jump_interrupted = Input.is_action_just_released("jump") and velocity.y < 0.0
 	var direction = get_direction()
 	velocity = calculate_move_velocitry(velocity, direction, is_jump_interrupted)
-	velocity = move_and_slide(velocity, Vector2.UP)
+	setAnimation(direction, velocity)
+
+	velocity = move_and_slide(velocity, Vector2(0,-2))
 	
+	print(is_player_on_ground())
+	
+func is_player_on_ground() -> bool:
+	return $FloorCast.is_colliding() or $LeftFloorCast.is_colliding() or $RightFloorCast.is_colliding()
+
 func get_direction() -> Vector2:
 	return Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
-		-1.0 if Input.is_action_just_pressed("jump") and is_on_floor()  else 0.0
+		-1.0 if Input.is_action_just_pressed("jump") and is_player_on_ground()  else 0.0
 	)
-	
+func setAnimation(
+		direction:Vector2,
+		velocity:Vector2
+	)->void:
+	if direction.x != 0:
+		$Sprite.scale.x = direction.x *4
+	if is_player_on_ground():
+		if direction.x != 0:
+			$AnimationPlayer.play("Running")
+		else:
+			$AnimationPlayer.play("Idle")
+		
+	if velocity.y < 0:
+		print("jump")
+		$AnimationPlayer.play("Jump")
+	elif velocity.y >0 :
+		$AnimationPlayer.play("Fall")
+	pass
+
 func calculate_move_velocitry(
 		linear_velocity:Vector2,
 		direction:Vector2,
@@ -32,11 +57,11 @@ func calculate_move_velocitry(
 	if is_jump_interrupted:
 		print("interrupted")
 		new_velocity.y += gravity*8 * get_physics_process_delta_time()
-	else:
+	elif !is_player_on_ground():
 		new_velocity.y += gravity * get_physics_process_delta_time()
+	else:
+		new_velocity.y = 0
 	if direction.y == -1.0:
 		new_velocity.y = speed.y * direction.y
-	velocity.y = min(gravity, velocity.y)
-	print(velocity)
-	
+	velocity.y = min(gravity, velocity.y)	
 	return new_velocity
