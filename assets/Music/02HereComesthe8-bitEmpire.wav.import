@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/02HereComesthe8-bitEmpire.wav-f9278fe191bf8d982c2f55f3ac8e186f.sample"
+
+[deps]
+
+source_file="res://assets/Music/02HereComesthe8-bitEmpire.wav"
+dest_files=[ "res://.import/02HereComesthe8-bitEmpire.wav-f9278fe191bf8d982c2f55f3ac8e186f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

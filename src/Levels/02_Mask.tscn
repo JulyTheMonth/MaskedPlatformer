@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Levels/storyScreen.gd" type="Script" id=1]
+[ext_resource path="res://src/Levels/03_TutorialPart2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/munro.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 3 )
+
+[node name="Mask" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+nextLevel = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -695.0
+margin_top = -397.0
+margin_right = 695.0
+margin_bottom = 516.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "So Tony. He went through this door and saw a mask. He did not know better as to take the mask and put it on his head.
+
+Tony heard a magical sound. This one sound that you do not want to hear in a strange dungeon while putting on a mask.
+
+He tried the first reasonable thing since he woke up. He tried to take this mask off. However, the mask insisted on being on his face. Atleast no one can Tony's embarassed face.
+
+Control: Move mouse to move the mask.
+
+Press enter to continue"
+

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/04BoktipsetFranHelvetet.ogg-da4840d571c5f5529b6c452f6a5eb629.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/04BoktipsetFranHelvetet.ogg"
+dest_files=[ "res://.import/04BoktipsetFranHelvetet.ogg-da4840d571c5f5529b6c452f6a5eb629.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/02HereComesthe8-bitEmpire.ogg-534a1bf537323c542a2165fab6d81ad6.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/02HereComesthe8-bitEmpire.ogg"
+dest_files=[ "res://.import/02HereComesthe8-bitEmpire.ogg-534a1bf537323c542a2165fab6d81ad6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

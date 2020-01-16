@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/06Satisfucktion.wav-e5d29c6fd99ecb8d1ab48dc3362d4858.sample"
+
+[deps]
+
+source_file="res://assets/Music/06Satisfucktion.wav"
+dest_files=[ "res://.import/06Satisfucktion.wav-e5d29c6fd99ecb8d1ab48dc3362d4858.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
