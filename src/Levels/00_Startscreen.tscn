@@ -1,18 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://src/Levels/storyScreen.gd" type="Script" id=1]
-[ext_resource path="res://src/Levels/01_Tutorial.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/munro.ttf" type="DynamicFontData" id=3]
-
-[sub_resource type="DynamicFont" id=1]
-size = 50
-font_data = ExtResource( 3 )
+[ext_resource path="res://assets/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/Levels/storyScreen.gd" type="Script" id=2]
+[ext_resource path="res://src/Levels/01_Tutorial.tscn" type="PackedScene" id=3]
 
 [node name="Start" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
-nextLevel = ExtResource( 2 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+nextLevel = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -28,7 +25,6 @@ margin_left = -695.0
 margin_top = -295.0
 margin_right = 695.0
 margin_bottom = 295.0
-custom_fonts/normal_font = SubResource( 1 )
 text = "Welcome to Tony and the mask
 
 Tony the protagonist is found him self in a strange dungeon. He does not know how he ended up in this place. One thing was sure tough. He wanted to escape as fast as possible.
@@ -43,6 +39,5 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -63.0
 margin_right = 977.0
-custom_fonts/normal_font = SubResource( 1 )
 text = "Soundtrack made by Ozzed, 8-bit Empire"
 

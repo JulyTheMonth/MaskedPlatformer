@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -7,7 +7,7 @@ var spriteSize: Vector2
 export var color: Color = Color(0,0,0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	spriteSize = $TestMask.texture.get_size()
+	spriteSize = $MaskTexture.texture.get_size()
 	$TopRect.rect_position = Vector2(0,0) 
 	$TopRect.rect_scale.y = -1
 	$TopRect.color = color
@@ -28,7 +28,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	offset = get_viewport().get_mouse_position() - spriteSize/2
+	rect_position = get_viewport().get_mouse_position() - spriteSize/2
+	var offset = get_viewport().get_mouse_position() - spriteSize/2
 	$TopRect.rect_size.y = offset.y
 	$TopRect.rect_size.x = spriteSize.x -offset.x
 	
