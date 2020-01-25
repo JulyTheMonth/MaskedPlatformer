@@ -21,13 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Tony and the Mask"
-run/main_scene="res://src/Levels/00_Startscreen.tscn"
+run/main_scene="res://src/ui/MainMenu.tscn"
 boot_splash/bg_color=Color( 0.996078, 0.996078, 0.996078, 1 )
 config/icon="res://Icon.png"
 
 [autoload]
 
 MusicController="*res://src/MusicController.tscn"
+Gamedata="*res://src/data-and-saves/gamedata.gd"
 
 [display]
 

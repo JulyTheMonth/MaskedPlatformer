@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/ui/UserInterface.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/TileMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Door.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/Levels/02_Mask.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Player.tscn" type="PackedScene" id=4]
 
 [node name="Tutorial" type="Node2D"]
 
@@ -19,9 +18,8 @@ tile_data = PoolIntArray( -196613, 3, 0, -196612, 3, 1, -196611, 3, 1, -196610, 
 
 [node name="Door" parent="." instance=ExtResource( 3 )]
 position = Vector2( 224, 352 )
-nextLevel = ExtResource( 4 )
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
+[node name="Player" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
 position = Vector2( 144, 976 )
 

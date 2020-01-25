@@ -15,6 +15,7 @@ func _unhandled_input(event:InputEvent) -> void:
 		self.paused = !paused
 		scene_tree.set_input_as_handled()
 	pass
+
 func set_paused(value : bool) -> void:
 	paused = value
 	scene_tree.paused = value
@@ -22,3 +23,15 @@ func set_paused(value : bool) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_MainMenuButton_button_up():
+	print("press")
+	set_paused(false)
+	get_tree().change_scene_to(load("res://src/ui/MainMenu.tscn"))
+	pass # Replace with function body.
+
+
+func _on_MainMenuButton_button_up2():
+	print("test")
+	pass # Replace with function body.

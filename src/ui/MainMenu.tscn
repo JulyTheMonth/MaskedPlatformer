@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/ui/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://assets/backgrounditch.png" type="Texture" id=3]
+[ext_resource path="res://src/ui/LevelSelectButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/ui/QuitButton.tscn" type="PackedScene" id=5]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1439.0
+margin_bottom = -809.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -423.0
+margin_top = -52.2502
+margin_right = 447.0
+margin_bottom = 201.75
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="LevelSelect" parent="Buttons" instance=ExtResource( 4 )]
+margin_right = 870.0
+margin_bottom = 122.0
+
+[node name="QuitButton" parent="Buttons" instance=ExtResource( 5 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 132.0
+margin_right = 870.0
+margin_bottom = 254.0
+text = "Quit"
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -192.0
+margin_top = 221.592
+margin_right = 192.0
+margin_bottom = 278.592
+text = "Tony and the Mask"
+align = 1
+

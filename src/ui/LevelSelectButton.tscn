@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/ui/LevelSelectButton.gd" type="Script" id=1]
+
+[node name="LevelSelect" type="Button"]
+margin_right = 471.0
+margin_bottom = 117.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Select Level"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="button_up" from="." to="." method="_on_LevelSelect_button_up"]

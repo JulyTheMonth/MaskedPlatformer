@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Door.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/Levels/08_Level4.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/ui/UserInterface.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/ui/UserInterface.gd" type="Script" id=6]
+[ext_resource path="res://src/ui/UserInterface.tscn" type="PackedScene" id=4]
 
 [node name="07_Level3" type="Node2D"]
 __meta__ = {
@@ -26,16 +24,12 @@ limit_bottom = 1080
 
 [node name="Door" parent="." instance=ExtResource( 3 )]
 position = Vector2( 4400, 544 )
-nextLevel = ExtResource( 4 )
+currentLevelNumber = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 7
 
-[node name="UserInterface" type="Control" parent="CanvasLayer" instance=ExtResource( 5 )]
-pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 6 )
+[node name="UserInterface" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 
 [editable path="Player"]
