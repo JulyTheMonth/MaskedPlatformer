@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/Buttonv1_pressed.png" type="Texture" id=4]
 [ext_resource path="res://assets/munro.tres" type="DynamicFont" id=5]
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 200, 200 )
 margin_left = 6.0
@@ -14,7 +14,7 @@ margin_right = 6.0
 margin_top = 6.0
 margin_bottom = 6.0
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 200, 200 )
 margin_left = 6.0
@@ -22,7 +22,7 @@ margin_right = 6.0
 margin_top = 6.0
 margin_bottom = 6.0
 
-[sub_resource type="StyleBoxTexture" id=1]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 200, 200 )
 margin_left = 6.0
@@ -30,7 +30,7 @@ margin_right = 6.0
 margin_top = 6.0
 margin_bottom = 6.0
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 200, 200 )
 margin_left = 6.0
@@ -46,11 +46,11 @@ Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
-Button/styles/disabled = SubResource( 4 )
+Button/styles/disabled = SubResource( 1 )
 Button/styles/focus = null
-Button/styles/hover = SubResource( 3 )
-Button/styles/normal = SubResource( 1 )
-Button/styles/pressed = SubResource( 2 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 4 )
 GridContainer/constants/hseparation = 10
 GridContainer/constants/vseparation = 10
 
