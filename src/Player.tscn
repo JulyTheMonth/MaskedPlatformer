@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Player.png" type="Texture" id=2]
@@ -74,15 +74,21 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 25.7365, 30 )
+extents = Vector2( 26.8422, 29 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 29.7138, 29.5115 )
 
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 27, 2 )
+
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 6, -34 )
 collision_mask = 2
+collision/safe_margin = 0.3
 script = ExtResource( 1 )
 speed = Vector2( 700, 1300 )
+acceleration = 0.6
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 4, 4 )
@@ -128,26 +134,26 @@ __meta__ = {
 }
 
 [node name="LeftFloorCast" type="RayCast2D" parent="."]
-position = Vector2( -25, 30 )
+position = Vector2( -27, 30 )
 enabled = true
 cast_to = Vector2( 0, 4 )
 collision_mask = 18
 
 [node name="RightFloorCast" type="RayCast2D" parent="."]
-position = Vector2( 25, 30 )
+position = Vector2( 27, 30 )
 enabled = true
 cast_to = Vector2( 0, 4 )
 collision_mask = 18
 
-[node name="SpikeHitBox" type="Area2D" parent="."]
+[node name="SpikeHitbox" type="Area2D" parent="."]
 monitorable = false
-collision_mask = 4
+collision_mask = 20
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeHitBox"]
-position = Vector2( 0.157768, 2 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeHitbox"]
+position = Vector2( 0.157768, 0 )
 shape = SubResource( 6 )
 
 [node name="RespawnTimer" type="Timer" parent="."]
@@ -172,6 +178,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="area_entered" from="SpikeHitBox" to="." method="_on_SpikeHitBox_area_entered"]
+[node name="StompyHitBox" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompyHitBox"]
+position = Vector2( 0, -29 )
+shape = SubResource( 8 )
+[connection signal="area_entered" from="SpikeHitbox" to="." method="_on_SpikeHitBox_area_entered"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_RespawnTimer_timeout"]
 [connection signal="area_entered" from="DoorHitBox" to="." method="_on_DoorHitBox_area_entered"]
+[connection signal="area_entered" from="StompyHitBox" to="." method="_on_StompyHitBox_area_entered"]

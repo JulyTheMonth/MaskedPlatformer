@@ -5,7 +5,7 @@
 [ext_resource path="res://src/Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=4]
 
-[node name="Tutorial" type="Node2D"]
+[node name="Level" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 7
@@ -26,9 +26,5 @@ position = Vector2( 144, 976 )
 [node name="Camera2D" parent="Player" index="2"]
 limit_right = 1920
 limit_bottom = 1080
-
-[node name="CollisionShape2D" parent="Player/SpikeHitBox" index="0"]
-position = Vector2( -2.98023e-007, -8.58307e-006 )
-
 
 [editable path="Player"]

@@ -26,5 +26,13 @@ func _physics_process(delta):
 		velocity.y = min(velocity.y, maxSpeed)
 	else:
 		velocity = Vector2.ZERO
-	print(velocity)
+	
+	playAnimation(velocity)
+	$Area2D.monitorable = velocity.y > 0
+	
 	move_and_slide(velocity);
+func playAnimation(velocity:Vector2):
+	if velocity.y > 0:
+		$AnimationPlayer.play("Falling")
+	elif is_on_wall():
+		$AnimationPlayer.play("Standing")

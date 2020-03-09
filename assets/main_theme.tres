@@ -53,4 +53,3 @@ Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = SubResource( 4 )
 GridContainer/constants/hseparation = 10
 GridContainer/constants/vseparation = 10
-

@@ -3,7 +3,7 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var progress = 0
+var progress = -1
 
 var levels :Array = [
 {"path": "res://src/Levels/00_Startscreen.tscn",
@@ -24,9 +24,22 @@ var levels :Array = [
 "name":"Level 6"},
 {"path":"res://src/Levels/11_Level7.tscn",
 "name":"Level 7"},
-{"path":"res://src/Levels/12_End.tscn",
-"name":"End Screen"}
-]
+{"path":"res://src/Levels/12_Level8.tscn",
+"name":"Level 8"},
+{"path":"res://src/Levels/13_Level9.tscn",
+"name":"Level 9"},
+{"path":"res://src/Levels/14_Level10.tscn",
+"name":"Level 10"},
+{"path":"res://src/Levels/15_Level11.tscn",
+"name":"Level 11"},
+{"path":"res://src/Levels/16_Level12.tscn",
+"name":"Level 12"},
+{"path":"res://src/Levels/17_Level13.tscn",
+"name":"Level 13"},
+{"path":"res://src/Levels/18_Level14.tscn",
+"name":"Level 14"}]
+
+var endLevel = {"path":"res://src/Levels/19_End.tscn"}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	loadProgress()
@@ -36,7 +49,10 @@ func getAllLevels() -> Array:
 	return levels
 
 func getLevel(level:int) -> Dictionary:
-	return levels[level]
+	if(level == levels.size()):
+		return endLevel
+	else:
+		return levels[level]
 
 func getProgress()-> int:
 	return progress

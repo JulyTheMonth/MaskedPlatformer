@@ -4,7 +4,7 @@ class_name Actor
 # var a = 2
 # var b = "text"
 export var speed: = Vector2(400.0, 1000.0)
-
+export var acceleration = 0.5
 export var gravity = 3000.0
 var velocity = Vector2.ZERO
 # Called when the node enters the scene tree for the first time.

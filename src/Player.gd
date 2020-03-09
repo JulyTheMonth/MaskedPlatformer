@@ -6,7 +6,6 @@ extends Actor
 var jumpSound = load("res://assets/SoundEffekt/jump.wav")
 var impactSound = preload("res://assets/SoundEffekt/impact.wav")
 var doorSound = load("res://assets/SoundEffekt/door.wav")
-
 var is_movable: bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -62,21 +61,25 @@ func calculate_move_velocitry(
 		is_jump_interrupted: bool
 	) -> Vector2:
 	var new_velocity: = linear_velocity
-	new_velocity.x = speed.x * direction.x
 	if is_jump_interrupted:
 		print("interrupted")
 		new_velocity.y = 400
 #		new_velocity.y += gravity*30 * get_physics_process_delta_time()
 	elif !is_player_on_ground():
+		new_velocity.x = lerp(velocity.x, speed.x * direction.x, acceleration /2)
 		new_velocity.y += gravity * get_physics_process_delta_time()
 	else:
-		new_velocity.y = 0
+		new_velocity.x = lerp(velocity.x, speed.x * direction.x, acceleration)
+		pass
+#		new_velocity.y = 0
 	if direction.y == -1.0 and is_movable:
 		new_velocity.y = speed.y * direction.y
 	velocity.y = min(gravity, velocity.y)	
+	print(new_velocity)
 	return new_velocity
 
 func _on_SpikeHitBox_area_entered(area:Area2D):
+	print("hit")
 	if (area.get_collision_layer_bit(2)):
 		print("spike")
 
@@ -99,3 +102,17 @@ func _on_DoorHitBox_area_entered(area: Area2D):
 		$AudioPlayer.play()
 		is_movable=false
 	pass # Replace with function body.
+
+
+
+func _on_StompyHitBox_area_entered(area):
+	print("hit")
+	if (area.get_collision_layer_bit(4)):
+		print("spike")
+
+#		yield($AudioPlayer, "finished")
+		get_tree().reload_current_scene()
+	
+		
+	pass # Replace with function body.
+

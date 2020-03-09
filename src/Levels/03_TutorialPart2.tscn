@@ -5,7 +5,7 @@
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Door.tscn" type="PackedScene" id=4]
 
-[node name="03_TutorialPart2" type="Node2D"]
+[node name="Level" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
@@ -30,6 +30,5 @@ limit_bottom = 1080
 [node name="Door" parent="." instance=ExtResource( 4 )]
 position = Vector2( 272, 352 )
 currentLevelNumber = 1
-
 
 [editable path="Player"]

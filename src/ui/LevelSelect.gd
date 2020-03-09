@@ -11,6 +11,7 @@ func _ready():
 	var progress:int = Gamedata.getProgress()
 	var counter: int = 0
 	for level in allLevels:
+		print(counter)
 		var instance= levelbutton.instance()
 		instance.initButton(level["name"], level["path"])
 		if counter > progress+1:
