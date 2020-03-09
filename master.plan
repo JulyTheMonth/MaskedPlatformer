@@ -6,8 +6,8 @@
 	"GridVisible": true,
 	"NumberingIgnoreTopLevel": false,
 	"NumberingSequence": 0,
-	"Pan.X": 330,
-	"Pan.Y": 244,
+	"Pan.X": 368,
+	"Pan.Y": 86,
 	"PulsingTaskSelection": true,
 	"SampleBuffer": 512,
 	"SampleRate": 44100,
@@ -61,6 +61,7 @@
 		},
 		{
 			"Checkbox.Checked": false,
+			"CompletionTime": "Mar 9 2020 17:15:23",
 			"CreationTime": "Jan 26 2020 19:51:34",
 			"Description": "More and beter Levels",
 			"FilePath": "",
@@ -104,7 +105,7 @@
 		},
 		{
 			"Checkbox.Checked": false,
-			"CompletionTime": "Feb 1 2020 22:22:14",
+			"CompletionTime": "Mar 9 2020 17:14:46",
 			"CreationTime": "Jan 26 2020 19:51:34",
 			"Description": "Stompy",
 			"FilePath": "",
@@ -128,7 +129,7 @@
 			"Position.Y": 176,
 			"Progression.Current": 0,
 			"Progression.Max": 0,
-			"Selected": false,
+			"Selected": true,
 			"TaskType.CurrentChoice": 0
 		},
 		{
@@ -147,7 +148,8 @@
 			"TaskType.CurrentChoice": 0
 		},
 		{
-			"Checkbox.Checked": false,
+			"Checkbox.Checked": true,
+			"CompletionTime": "Mar 9 2020 17:15:23",
 			"CreationTime": "Jan 26 2020 19:59:15",
 			"Description": "Create more levels",
 			"FilePath": "",
@@ -295,7 +297,7 @@
 		},
 		{
 			"Checkbox.Checked": false,
-			"CompletionTime": "Feb 1 2020 22:21:32",
+			"CompletionTime": "Mar 9 2020 17:14:46",
 			"CreationTime": "Jan 29 2020 22:46:38",
 			"Description": "Player Movement Enhancement",
 			"FilePath": "",
